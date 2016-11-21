@@ -1,0 +1,37 @@
+<section class="sub-page-header" role="programas">
+	<div class="container">
+		<div class="sub-page-header--body">
+			<img class="sub-page-header--logo" src="images/logo.png" alt="">
+			<span>TV Globo</span>
+			<h1>Programação</h1>
+		</div>
+	</div>
+</section>
+<div class="main-content--body">
+	<section id="programas" role="programas" class="card-box">
+		<div class="card-box__body">
+			<div class="single-card" ng-repeat="programa in data.gradeProgramacao.slots">
+				<a href="{{ programa.url }}" class="card card--anchor">
+					<div class="card__header">
+						<span>Começa às</span>
+						<h1>{{ programa.horario }}h</h1>
+						<!-- <span class="card--right-tag">08:50h</span> -->
+					</div>
+					<div class="card--image">
+						<img class="card--img" src="{{ programa.imagem }}" alt="">
+					</div>
+					<div class="card--body">
+						<img class="card--logo" src="{{ programa.logo }}" alt="">
+						<h1 class="card--title">{{ programa.nome_programa }}</h1>
+						<p class="card--description">{{ programa.resumo }}</p>
+						<div class="card-footer">
+							<div class="card-footer__item">
+								<span class="card--left-tag">{{ programa.tipo_programa }}</span>
+							</div>
+						</div>
+					</div>
+				</a>
+			</div>
+		</div>
+	</section>
+</div>

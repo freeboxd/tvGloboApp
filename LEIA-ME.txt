@@ -1,0 +1,10 @@
+Para rodar o projeto, siga os seguintes passos:
+
+1. Instale as dependências:
+$ npm install
+
+2. Depois digite 
+$ gulp
+...no terminal para rodar o servidor.
+
+Observação: a única página existente é a "Programação"

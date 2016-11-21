@@ -1,0 +1,217 @@
+@import '_variables'
+@import 'nib'
+
+normalize-css()
+
+//
+// core
+//================================
+
+*
+	box-sizing: border-box;
+
+body
+	background #fdfdfd
+	color #3e3e3e
+	font-family Helvetica, Open Sans, sans-serif
+	font-size 15px
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6
+		margin 0
+	p
+		font-weight lighter
+	ul
+		list-style none
+		margin 0
+		padding 0
+		
+html,
+body,	
+.wrap
+	width 100%
+	height 100%
+		
+//
+// reutilizables
+//================================
+
+.reset-btn
+	background none
+	border-radius 3px
+	border none
+
+.btn
+	@extend .reset-btn
+	color white
+	font-weight bold
+	text-transform uppercase
+	font-size 0.8em
+	padding 0.9em
+	
+.blue-btn
+	@extend .btn
+	background #0078ff
+	&:hover
+		background #2c8fff
+	
+.grey-btn
+	@extend .btn
+	background #2b2b2b
+	&:hover
+		background #3e3e3e
+
+//
+// sidebar
+//================================
+
+::-webkit-scrollbar{
+	width: 10px;
+}
+
+::-webkit-scrollbar-track-piece
+	background-color #FFF
+
+::-webkit-scrollbar-thumb
+	background-color #CBCBCB
+	outline 2px solid #FFF
+	outline-offset -2px
+	border .1px solid #B7B7B7
+
+::-webkit-scrollbar-thumb:hover
+	background-color #909090
+
+.sidebar
+	background #2b2b2b
+	overflow hidden
+	column(1)
+	+above(1400px)
+		font-size 20px
+
+	+above(1200px)
+		height 100%
+		max-width 15%
+		position fixed
+		
+	+tablet()
+		height 100%
+		max-width 20%
+		position fixed
+		font-size 16px
+		
+	+above(760px)
+		overflow-y auto
+		
+	+below(760px)
+		font-size 18px
+		
+.menu-header	
+	background #1d1d1d
+	color #989898
+	padding 0.8em
+	position relative
+	&:hover
+		background #3e3e3e
+		color #e1e1e1
+
+.menu-toggle-btn
+	text-decoration none
+	color #337ab7
+	cursor pointer
+	&:before
+		content ''
+		position absolute
+		top 0
+		left 0
+		width 100%
+		height 100%
+
+.menu-title
+	font-size 0.8em
+	font-weight bold
+	text-transform uppercase
+
+.menu
+	display none
+	+above(760px)
+		display block
+
+.menu--item
+	color	#e1e1e1
+	display block
+	font-size 0.8em
+	font-weight bold
+	padding 0.8em
+	text-decoration none
+	border-top solid 1px #3e3e3e
+	position relative
+	transition 250ms linear
+	&:hover
+		color white
+	&.active
+		color white
+		+below(1200px)
+			color #0078ff
+	+above(1200px)
+		&:after,
+		&:before
+			content ''
+			width 100%
+			height 100%
+			position absolute
+			z-index -1
+			bottom 0
+			left -100%
+			transition inherit
+		&:after
+			background #0078ff
+		&:before
+			background #3e3e3e
+	+below(1200px)
+		border-top solid 1px #3e3e3e
+
+// .menu--item.active
+// 	color white
+
+.menu--item:hover:before,
+.menu--item.active:after
+	left 0
+
+//
+// main-content
+//================================
+
+.main-content
+	column(1)
+	display block
+	+above(1200px)
+		width 85%
+		margin-left 15%
+	+tablet()
+		width 80%
+		margin-left 20%
+	&--body
+		padding 1em
+		height 100%
+
+.sub-page-header--body
+	background #0078ff
+	color white
+	overflow hidden
+	padding 0.8em
+	span
+		font-size 0.8em
+		text-transform uppercase
+	h1
+		font-size 2em
+		margin 0 0 0.25em
+
+.sub-page-header--logo
+	float left
+	margin-right 1em
+	max-width 4em
+	
+@import '_pages/programacao.styl'

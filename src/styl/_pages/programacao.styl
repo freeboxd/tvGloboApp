@@ -1,0 +1,157 @@
+.card
+	overflow hidden
+	margin-bottom 1.5em
+	max-width 500px
+
+.card--anchor
+	color inherit
+	width 100%
+	text-decoration none
+	&:hover .card--description
+			text-decoration underline
+	
+.single-card
+	margin 2em 0
+	transition 150ms linear
+	&:hover
+		opacity .88
+	+above(1400px)
+		column(3/12, $cycle: 4)		
+	+desktop()
+		column(4/12, $cycle: 3)		
+	+tablet()
+		column(1/2, $cycle: 2)		
+	+mobile()
+		stack()
+
+.card--description,
+.card-footer__item span
+	color #565656
+	
+.card__header
+	color white
+	background #0078ff
+	padding 1em
+	overflow hidden
+	span
+		font-size 0.8em
+		font-weight bold
+		text-transform uppercase
+	h1
+		font-size 1.5em
+		margin 0
+
+span.card--left-tag
+	float left
+	
+span.card--right-tag
+	text-align right
+
+.card--image
+	width 100%
+	text-align center
+	overflow hidden
+	img
+		width 100%
+		display block	
+		height auto
+		
+.card--body
+	padding 1em
+	border #e1e1e1
+	border-top 0
+	overflow hidden
+	+mobile()
+		text-align center
+		
+.card--logo
+	+above(760px)
+		float left
+		width 2em
+	+below(760px)
+		width 3em
+
+
+.card--title
+	margin 0 1.4em
+	line-height 1em
+	+below(760px)
+		margin-top 0.5em
+
+.card--anchor:hover .card--title
+	color #337ab7
+	
+.card--description
+	font-size 1.1em
+	margin 1em 0
+
+// .card--title
+	// color #3e3e3e
+
+.card-footer
+	margin-top 1em
+	&__item
+		column(1/3)
+		border-top solid 1px #e1e1e1
+		padding 1em 0
+		span
+			column(1/2)
+			font-size 0.75rem
+			font-weight bold
+			text-transform uppercase
+		
+	+below(760px)
+		text-align center
+			
+//
+// modal
+//================================
+
+.add-card-modal
+	background white
+	border-radius 3px
+	width 80%
+	overflow hidden
+	+above(990px)
+		max-width 40%
+
+.modal-box
+	&--header,
+	&--body
+		padding 1em 1em 0.8em
+	&--header
+		background #e1e1e1
+		position relative
+		h1
+			font-size 1.5em
+		
+	&--close-btn
+		font-size 0.8em
+		font-weight bold
+		text-transform uppercase
+		position absolute
+		top 40%
+		right 5%
+		cursor pointer
+		&:hover
+			color #757575
+	
+.add-card-form
+	&--input-box
+		margin-bottom 1em
+		padding 0.2em 0
+		label
+			float left
+			font-weight bold
+			width 40%
+		input
+			@extend .reset-btn
+			border #e1e1e1
+			padding 1.1em 0.5em
+			height 2em
+			width 60%
+			
+	.send-btn
+		@extend .blue-btn
+	.clean-btn
+		@extend .grey-btn
