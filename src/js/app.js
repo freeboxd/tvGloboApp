@@ -15,7 +15,7 @@ app.config(function($routeProvider) {
             templateUrl: partials + 'programacao.html',
         })
         .when('/adicionar-programa', {
-            title: 'Programação',
+            title: 'Adicionar programa',
             controller: 'addCardCtrl',
             templateUrl: partials + 'programacao.html'
         })

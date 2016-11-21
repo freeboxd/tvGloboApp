@@ -1,7 +1,6 @@
-app.controller('addCardCtrl', function() { // add-card modal box
+app.controller('addCardCtrl', function($scope, $window, $location) { // add-card modal box
 
 	$scope.modalBox = $('[data-trigger="add-card-modal"]');
-
 	$scope.$on('$routeChangeSuccess', function () {
 		$scope.modalBox.easyModal({overlay : 0.4,	onClose: function(){
 			$window.location.assign('/#/programacao');
@@ -15,7 +14,7 @@ app.controller('addCardCtrl', function() { // add-card modal box
 
 });
 
-app.controller('programacaoCtrl', function($scope, $http, $controller, $location) {
+app.controller('programacaoCtrl', function($scope, $http) {
 	$http.get("js/data/data.json")
     .success(function(data) {
         $scope.data = data;
